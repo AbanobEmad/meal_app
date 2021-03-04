@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealapp/Models/Category.dart';
+import 'package:mealapp/Models/Meal.dart';
 import 'package:mealapp/Widgets/Meal_Item.dart';
 import 'package:mealapp/dummy_data.dart';
 
@@ -24,7 +25,7 @@ class _Category_Meal_ScreenState extends State<Category_Meal_Screen> {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text(cate_Title),),automaticallyImplyLeading: false,),
       body: ListView.builder(itemBuilder: (context,index){
-        return MealItem(categoryMeal[index].imageUrl);
+        return MealItem(categoryMeal[index]);
       },
       itemCount: categoryMeal.length,),
     );
