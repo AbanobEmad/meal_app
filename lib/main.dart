@@ -33,17 +33,20 @@ class MyApp extends StatelessWidget {
         Category_Meal_Screen.Id:(context)=>Category_Meal_Screen(),
         MealDeatailsScren.Id :(context)=>MealDeatailsScren(),
         FiltersScreen.Id:(context)=>FiltersScreen(),
+        MyHomePage.Id:(context)=>MyHomePage(),
       },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  static const String Id="Home";
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

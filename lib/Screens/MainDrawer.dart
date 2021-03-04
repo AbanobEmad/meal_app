@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mealapp/Screens/Categories_Screen.dart';
 import 'package:mealapp/Screens/Filters_Screen.dart';
+import 'package:mealapp/main.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, Function tapHandler) {
@@ -43,13 +45,14 @@ class MainDrawer extends StatelessWidget {
           ),
           buildListTile('Meal', Icons.restaurant, () {
             Navigator.pop(context);
+            Navigator.of(context).pushReplacementNamed("/");
           }),
           SizedBox(
             height: 20,
           ),
           buildListTile("Filters", Icons.settings, () {
             Navigator.pop(context);
-            Navigator.of(context).pushNamed(FiltersScreen.Id);
+            Navigator.of(context).pushReplacementNamed(FiltersScreen.Id);
           })
         ],
       ),
