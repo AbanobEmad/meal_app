@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mealapp/Screens/MainDrawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   static const String Id = "FilltersScreen";
+  final Function saveFilter;
+  FiltersScreen(this.saveFilter);
 
   @override
   _FiltersScreenState createState() => _FiltersScreenState();
@@ -31,6 +34,30 @@ class _FiltersScreenState extends State<FiltersScreen> {
         title: Center(
           child: Text("Filters"),
         ),
+        actions: [
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+                margin: EdgeInsets.only(right: 10),
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    final Map<String, bool> selectedFilters = {
+                      "glutenFree": _glutenFree,
+                      "lactoseFree": _lactoseFree,
+                      "vegan": _vegan,
+                      "vegetarian": _vegetarian
+                    };
+                    widget.saveFilter(selectedFilters);
+                  },
+                  child: Text(
+                    "save",
+                    style: TextStyle(fontSize: 17),
+                  ),
+                )),
+          )
+        ],
       ),
       body: Column(
         children: [

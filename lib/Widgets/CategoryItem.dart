@@ -3,7 +3,7 @@ import 'package:mealapp/Models/Category.dart';
 import 'package:mealapp/Screens/Category_Meal_Screen.dart';
 
 class CategoryItem extends StatelessWidget {
-  final  _Category ;
+  final  Category _Category ;
 
 
   CategoryItem(this._Category);
